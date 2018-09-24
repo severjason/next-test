@@ -2,15 +2,27 @@ import React from 'react';
 import Link from 'next/link';
 import HeaderStyle from './styles';
 
-const Header = () => (
-  <HeaderStyle>
-    <Link href="/">
-      <a>Home</a>
-    </Link>
-    <Link href="/about">
-      <a>About</a>
-    </Link>
-  </HeaderStyle>
-);
+class Header extends React.Component {
+
+  handleSearch = () => {
+    console.log('search')
+    Router.push('/search');
+  }
+
+ render() {
+   return (
+     <HeaderStyle>
+         <div
+          onClick={this.handleSearch}
+         >
+           Home1
+         </div>
+       <Link href="/about">
+         <a>About</a>
+       </Link>
+     </HeaderStyle>
+   )
+ }
+}
 
 export default Header;

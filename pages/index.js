@@ -5,7 +5,7 @@ import fetch from 'isomorphic-unfetch';
 
 const Index = (props) => (
   <Layout>
-    <h1>Batman TV shows</h1>
+    <h1>Batman TV shows1</h1>
     <ul>
       {props.shows.map(({show}) => (
         <li key={show.id} >
@@ -22,7 +22,7 @@ Index.getInitialProps = async function () {
   const res = await fetch('https://api.tvmaze.com/search/shows?q=superman');
   const data = await res.json();
 
-  console.log(`Show data fetched. Count: ${data.length}`);
+  // console.log(`Show data fetched. Count: ${data.length}`);
 
   return {
     shows: data,
